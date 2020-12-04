@@ -15,10 +15,12 @@ def generate_voice():
     pydub.AudioSegment.converter = "./tts_storage/ffmpeg/bin/ffmpeg.exe"
     with open("./tts_storage/text/tts_script.txt", encoding='utf-8') as file_in:
         data = []
+        text_ = ''
         for line in file_in:
-            data.append(line)
-            print("## TTS script:",line)
 
+            text_ += line
+            print("## TTS script:",line)
+        data.append(text_)
     for i in range(0, len(data)):
         response = polly_client.synthesize_speech(VoiceId='Seoyeon',
                                                   OutputFormat='mp3',
@@ -29,8 +31,8 @@ def generate_voice():
         file.close()
 
         src = "./tts_storage/sound/seoyeon_{}.mp3".format(i)
-        dst = "./voice_conversion/data/test/seoyeon_{}.wav".format(i)
-        subprocess.call(['ffmpeg', '-i', 'seoyeon_{}.mp3'.format(i), '-c', 'pcm_u8', 'seoyeon_{}.wav'.format(i)])
+        dst = "./text_conversion/data/test/tts.wav".format(i)
+        subprocess.call(['ffmpeg', '-i', 'seoyeon_{}.mp3'.format(i), '-c', 'pcm_u8', 'tts.wav'.format(i)])
 
         sound = AudioSegment.from_mp3(src)
         sound.export(dst, format="wav", parameters=["-c:a", "pcm_u8"])
