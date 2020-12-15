@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+    Singing Voice Conversion page
+-->
+<html>
+{% include 'head.html' %}
+<link rel="stylesheet" href='static/css/music_player.css'/>
+
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 class="jg" style = "font-size:2em;">Singing Voice Conversion</h1>
+        <p class="jg" style = "font-size:1em;">같은 노래를 다른 가수의 목소리로 바꿔줍니다</p>
+    </header>
+
+    <!-- Main -->
+    <div id="main" style="background:none;">
+        {#        <div id="loading"></div>#}
+        <!-- Content -->
+        <section id="content" class="main" style="padding-top: 32px;">
+            {#            <span class="image main"></span>#}
+
+            <div class="spotlight">
+                <div class="content" >
+                    <!-- Called of font style  file -->
+
+                    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+                    {#                    parameter로 전달된 가수이름을 한글로 바꿈#}
+                    {% if target_singer == 'iu' %}
+                        {% set target_singer_name = '아이유' %}
+                    {% elif target_singer == 'jang' %}
+                        {% set target_singer_name = '장범준' %}
+                    {% elif target_singer == 'singer' %}
+                        {% set target_singer_name = '다른가수' %}
+                    {% endif %}
+                    {% set singer_title_string = target_singer_name ~ ' - ' ~ title %}
+
+                    {#                    <h2 class="jg" style = "font-size:2em;color:#FFFFFF;">{{ singer_title_string }}</h2>#}
+
+                    <section class="wrapper">
+
+                        <div class="box alt">
+                            <div class="row gtr-uniform " id="container" style="margin-top: 0em;margin-left: 0em;">
+
+                                {# 1행#}
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a1.png" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a1.png" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a6.png" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a6.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a4.png" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a4.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                {# 2행#}
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a2.png" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a3.png" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a3.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="music-container col-4" style="width:300px;height: 300px;padding-left: 0px;padding-top: 0px;margin-right: 80px;margin-bottom: 80px;">
+                                    <div class="controls">
+                                        <input type="radio" name="controls" id="btn-play">
+                                        <label for="btn-play" class="lbl-btn-play"><span></span></label>
+
+                                        <input type="radio" name="controls" id="btn-pause">
+                                        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
+
+                                        <label class="lbl-btn-reset"><span></span></label>
+                                    </div>
+                                    {#          앨범 커버 교환 부분. 두 곳 모두 동일한 사진으로 교체 필요 #}
+                                    <div class="cover">
+                                        <div class="static-card">
+                                            <img src="static/images/cover/a1.jpg" alt="">
+                                        </div>
+
+                                        <div class="flip-card">
+                                            <img src="static/images/cover/a1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+</div>
+<!-- Footer -->
+{#    {% include 'footer.html' %}#}
+<!-- Scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>
+    // 순차적으로 음악파일 설정
+    var player_list = [];
+    player_list[0] = new Audio('static/audio/letter-k.wav');
+    player_list[1] = new Audio('static/audio/firstlove.wav');
+    player_list[2] = new Audio('static/audio/loved.wav');
+    player_list[3] = new Audio('static/audio/letter-k.wav');
+    player_list[4] = new Audio('static/audio/thirty.wav');
+    player_list[5] = new Audio('static/audio/wind.wav');
+
+    // 여러 플레이어 제어 위한 context, controls element list
+    var context_list = document.querySelectorAll('.music-container');
+    var controls_list = document.querySelectorAll('.controls');
+
+    // 초기화
+    for (var i = 0; i <player_list.length; i++) {
+        init(i);
+    }
+
+    // cover 위에 커서 있을때 toggle하는 function
+    function toggleHover(e) {
+        // 추후 테스트 위한 index
+        {#console.log(e.currentTarget.index);#}
+        {#var index = e.currentTarget.index;#}
+        context.classList.toggle('is-hovering');
+    }
+
+    // index를 통해 각각의 player 제어
+    function handleControlsClick(e) {
+        {#console.log('handle control' + e.currentTarget.index.toString());#}
+        var index = e.currentTarget.index;
+        var player = player_list[index];
+        var trgt = e.target;
+        if (trgt.nodeName !== 'LABEL' && !player) {
+            return;
+        }
+        // 클릭시 행동
+        switch (trgt.className) {
+            //실행
+            case 'lbl-btn-play':
+                player.play();
+                break;
+            // 일시정지
+            case 'lbl-btn-pause':
+                player.pause();
+                break;
+            // 재시작
+            case 'lbl-btn-reset':
+                player.currentTime = 0;
+                player.play();
+                break;
+            default:
+                return false;
+        }
+    }
+    // 초기화 function - index를 통해 각각의 player에 eventListener 등록
+    function init(player_index) {
+        var player_context = context_list[player_index];
+        var player_controls = controls_list[player_index];
+
+        // 1초간 떠있으며 화면에서 음악 제어 버튼을 보여준다.
+        player_context.classList.add('is-hovering');
+        setTimeout(function() {
+            player_context.classList.remove('is-hovering');
+        }, 1000);
+
+        // 재생제어 event listener 등록
+        player_controls.addEventListener('click', handleControlsClick);
+        player_controls.index = player_index;
+
+        // mouse hover event listener 등록
+        if (Modernizr.touch) {
+            player_context.addEventListener('click', toggleHover);
+            player_context.index = player_index;
+        }
+    }
+</script>
+<script src="static/js/jquery.scrollex.min.js"></script>
+<script src="static/js/jquery.scrolly.min.js"></script>
+<script src="static/js/browser.min.js"></script>
+<script src="static/js/breakpoints.min.js"></script>
+<script src="static/js/util.js"></script>
+<script src="static/js/main.js"></script>
+
+</body>
+</html>
+{#                    <div class="container-audio">#}
+{#                        <audio controls  loop autoplay>#}
+{#                            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg" type="audio/ogg">#}
+{#                        </audio>#}
+{#                    </div>#}
+{#                            TODO: 지금은 local file을 link하지만 추후 S3에서 링크?#}

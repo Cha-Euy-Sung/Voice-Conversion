@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Speech to Speech page
+-->
+<html>
+{% include 'head.html' %}
+<style>
+    #btns{
+        display: none;
+    }
+</style>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 class="jg" style = "font-size:2em;">Voice Conversion</h1>
+        <p class="jg" style = "font-size:1em;">내 목소리를 변환합니다</p>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        <div  style="margin: auto 0px;">
+        </div>
+        <!-- Content -->
+        <section id="content" class="main">
+            <span class="image main">
+            </span>
+            <div class="spotlight">
+                <div class="content" id="inner_content">
+                    <header class="major jg">
+                        {# get에서 넘어온 parameter에 따라 다르게 하기#}
+                        {% if singer == 'iu' %}
+                            <h3 class="jg" style="display:inline">이 아이는 뉘집</h3><h2 style="display:inline"> '아이유' </h2>
+                        {% elif singer == 'lee-moon-se' %}
+                            <h2 class="jg">이문세</h2>
+                        {% endif %}
+
+                    </header>
+                    <h5 id= 'status_message' class="jg">📢 마이크 버튼을 눌러 녹음 시작! </h5>
+
+                    <div id="controls" style="text-align : center;">
+                        <input type="image" id="record-button" src="static/images/control_record_of.gif" alt="submit" border="0" style="height: 30%; width: 25%;button:0; outline:0;">
+
+                        <form action="/record" class="form-group" method="POST">
+                            <input type="hidden" name="singer" id="singer" value={{ singer }}>
+                            <input type="hidden" name="state" id="state" value="ready">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</div>
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+{#<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>#}
+<!-- Scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script>
+    // 10 초 후 실행될 함수
+    function startConvert(){
+        document.getElementById("inner_content").innerHTML = "<img style=\'max-width:100%;display: block; margin: 0px auto;\'src=\'static/images/singConv.gif' alt=\"image\" class=\'center\' />";
+
+    }
+
+    // ajax function
+    $('#record-button').click(function(){
+        document.getElementById("controls").style = 'text-align : center;';
+        document.getElementById("record-button").src = "static/images/cat1.gif";
+        document.getElementById("status_message").innerText = "10초 녹음 중입니다~🎤"
+
+        var state = $('#state').val();
+        var singer = $('#singer').val();
+        var postdata = {
+            'state': state,
+            'singer': singer
+        }
+        $.ajax({
+            type: 'POST',
+            url: '{{url_for("record")}}',
+            data: JSON.stringify(postdata),
+            dataType: 'JSON',
+            contentType: "application/json",
+            success: function (data) {
+                if(state == 'ready'){
+                    window.location.href = "sts_result?singer="+singer;
+                }else{
+                    $('#state').val("recording");
+                }
+            },
+        })
+        var SECOND = 1000;
+        setTimeout(startConvert,10*SECOND);
+    })
+</script>
+<script src="static/js/jquery.scrollex.min.js"></script>
+<script src="static/js/jquery.scrolly.min.js"></script>
+<script src="static/js/browser.min.js"></script>
+<script src="static/js/breakpoints.min.js"></script>
+<script src="static/js/util.js"></script>
+<script src="static/js/main.js"></script>
+
+</body>
+</html>

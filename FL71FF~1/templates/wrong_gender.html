@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+{% include 'head.html' %}
+{% include 'table_head.html' %}
+
+<style>
+    table{
+        text-align: center;
+    }
+</style>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 class="jg" style = "font-size:2em;">OOPS! '아이유'를 선택한 당신</h1>
+        <p class="jg" style = "font-size:1em;">아직 남성분들은 '아이유' 목소리를 낼 수 없어요...</p>
+    </header>
+
+    <!-- Main -->
+    <div id="main" style="width:80%; margin: 0 auto;">
+        <div class="loading-div" style="text-align: center;">
+            <img src="/static/images/loading.gif" class="loading-image" style="margin-left: auto; margin-right: auto;display: none;"/>
+        </div>
+        <div style="text-align: center;">
+            <div id="loading" style="margin: auto 0px; text-align: center;">
+            </div>
+        </div>
+        <!-- Content -->
+
+        <!-- First Section -->
+        <section id="first" class="main special ">
+            <header class="major jg">
+                <h2 >남자 가수 목소리 선택</h2>
+            </header>
+            <div class="box alt">
+                <div class="row gtr-uniform " id="container">
+
+                    {# 1행#}
+
+                    <div class="col-3 " onclick="page_change()" style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img" href="sts_menu">
+                          <img src="static/images/return.jpg" alt="" />
+                        </span>
+                    </div>
+
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s2.png" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s3.png" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s4.png" alt="" />
+                        </span>
+                    </div>
+
+                    {# 2행#}
+
+                    <div class="col-3 "  style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s7.png" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s11.png" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s7.png" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/singer/s10.png" alt="" />
+                        </span>
+                    </div>
+
+                    {#  3행 #}
+
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/update4.jpg" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/update2.jpg" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "  style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/update6.jpg" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-3 "   style="border-bottom: none; position: relative;vertical-align: middle;" >
+                        <span class="image fit scale img">
+                            <img src="static/images/update5.jpg" alt="" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</div>
+<!-- Scripts -->
+<script src="static/js/jquery.min.js"></script>
+<script>
+    {#  table row click 시 이동 #}
+    jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+})
+</script>
+<script>
+    {#  table row click 시 이동 #}
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+
+    })
+    function page_change() {
+        window.location.href='sts_menu';
+}
+</script>
+<script src="static/js/jquery.scrollex.min.js"></script>
+<script src="static/js/jquery.scrolly.min.js"></script>
+<script src="static/js/browser.min.js"></script>
+<script src="static/js/breakpoints.min.js"></script>
+<script src="static/js/util.js"></script>
+<script src="static/js/main.js"></script>
+
+</body>
+</html>

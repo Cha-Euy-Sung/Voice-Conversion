@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{%  include 'head.html'%}
+
+
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <span class="logo"><img src="../static/images/kitten.gif" alt="titlelogo" width="400" /></span>
+        <h1 class="jg" style = "font-size:6em;">너의 목소리가 들려</h1>
+        <p class="jg" style = "font-size:1.7em;">취향 저격 내 가수의 목소리를 들려주는 음성 변환 서비스</p>
+        <div class="arrow bounce" id="menu"> <a href="#menu" style=" text-decoration: none !important; border:0px " > <img src="static/images/oie_transparent.png" width="60" height="70" alt="" /></a></div>
+        <style>
+a {text-decoration: none !important; }
+
+.arrow {
+  text-align: center;
+  margin: -2% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}</style>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        <!-- Introduction -->
+
+
+        <section  class="main special ">
+            <header class="major jg">
+                <h2 >메뉴 선택</h2>
+            </header>
+            <div class="box alt">
+                <div class="row gtr-uniform">
+                    <div class="col-4  jb-wrap" OnClick="location.href ='svc_menu'">
+                        <span class="image fit scale jb-image"><img src="static/images/ind1_.jpg" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-4  jb-wrap" OnClick="location.href ='tts_menu'">
+                        <span class="image fit scale jb-image"><img src="static/images/ind2_.jpg" alt="" />
+                        </span>
+                    </div>
+                    <div class="col-4  jb-wrap" OnClick="location.href ='sts_menu'">
+                        <span class="image fit scale jb-image"><img src="static/images/ind3_.jpg" alt="" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    {% include 'footer.html' %}
+
+</div>
+
+<!-- Scripts -->
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/jquery.scrollex.min.js"></script>
+<script src="static/js/jquery.scrolly.min.js"></script>
+<script src="static/js/browser.min.js"></script>
+<script src="static/js/breakpoints.min.js"></script>
+<script src="static/js/util.js"></script>
+<script src="static/js/main.js"></script>
+<script src="static/js/snowfall.jquery.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $(document).snowfall({
+            minSize: 5,
+            maxSize:10,
+            round : true,
+            maxSpeed : 2,
+            flakeCount: 30
+         })
+    });
+ </script>
+</body>
+
+</html>
