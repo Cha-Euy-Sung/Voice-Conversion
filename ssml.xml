@@ -1,2 +1,4 @@
-<ns0:speak xmlns:ns0="http://www.w3.org/2001/10/synthesis" version="1.0" xml:lang="en-US"><ns0:voice name="ko-KR-HeamiRUS"><ns0:prosody pitch="low" rate="-3.0%">&#47784;&#45944; &#53580;&#49828;&#53944; &#51473;.
+<ns0:speak xmlns:ns0="http://www.w3.org/2001/10/synthesis" version="1.0" xml:lang="ko-KR"><ns0:voice name="ko-KR-SunHiNeural"><ns0:prosody pitch="3%" rate="-12%" volume="10">&#50500;.
+&#46300;&#46356;&#50612; &#44368;&#50977;&#44284;&#51221; &#45149;&#45228;&#45817;.
+&#45336; &#51339;&#45817;.
 </ns0:prosody></ns0:voice></ns0:speak>
