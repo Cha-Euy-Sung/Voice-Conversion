@@ -15,7 +15,7 @@ def generate_voice():
     pitch = "3%"
     vol_ = 10
     # AZURE 키 필요 
-    speech_config = SpeechConfig(subscription="259174701e154db59bdd1e8af77a6423", region="eastus")
+    speech_config = SpeechConfig(subscription="APIKEY", region="eastus")
     speech_config.set_speech_synthesis_output_format(SpeechSynthesisOutputFormat["Riff24Khz16BitMonoPcm"])
     synthesizer = SpeechSynthesizer(speech_config=speech_config, audio_config=None)
     num_ = 0
